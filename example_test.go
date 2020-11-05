@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/shogo82148/androidbinary"
-	"github.com/shogo82148/androidbinary/apk"
+	"github.com/ntsword/androidbinary"
+	"github.com/ntsword/androidbinary/apk"
 )
 
 func ExampleNewXMLFile() {

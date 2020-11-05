@@ -5,14 +5,13 @@ import (
 	"bytes"
 	"fmt"
 	"image"
+	_ "image/jpeg" // handle jpeg format
+	_ "image/png"  // handle png format
 	"io"
 	"os"
 	"strconv"
 
-	"github.com/shogo82148/androidbinary"
-
-	_ "image/jpeg" // handle jpeg format
-	_ "image/png"  // handle png format
+	"github.com/ntsword/androidbinary"
 )
 
 // Apk is an application package file for android.
