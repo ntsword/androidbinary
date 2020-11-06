@@ -58,7 +58,7 @@ type MetaData struct {
 type Provider struct {
 	Authorities         androidbinary.String `xml:"http://schemas.android.com/apk/res/android authorities,attr"`
 	DirectBootAware     androidbinary.String `xml:"http://schemas.android.com/apk/res/android directBootAware,attr"`
-	Enable              androidbinary.Bool   `xml:"http://schemas.android.com/apk/res/android enable,attr"`
+	Enabled             androidbinary.Bool   `xml:"http://schemas.android.com/apk/res/android enabled,attr"`
 	Exported            androidbinary.String `xml:"http://schemas.android.com/apk/res/android exported,attr"`
 	GrantUriPermissions androidbinary.String `xml:"http://schemas.android.com/apk/res/android grantUriPermissions,attr"`
 	Icon                androidbinary.String `xml:"http://schemas.android.com/apk/res/android icon,attr"`
@@ -72,6 +72,19 @@ type Provider struct {
 	Syncable            androidbinary.String `xml:"http://schemas.android.com/apk/res/android syncable,attr"`
 	WritePermission     androidbinary.String `xml:"http://schemas.android.com/apk/res/android writePermission,attr"`
 	MetaData            []MetaData           `xml:"meta-data"`
+}
+
+// Receiver is a receiver in an application.
+type Receiver struct {
+	DirectBootAware androidbinary.String `xml:"http://schemas.android.com/apk/res/android directBootAware,attr"`
+	Enabled         androidbinary.Bool   `xml:"http://schemas.android.com/apk/res/android enabled,attr"`
+	Exported        androidbinary.String `xml:"http://schemas.android.com/apk/res/android exported,attr"`
+	Icon            androidbinary.String `xml:"http://schemas.android.com/apk/res/android icon,attr"`
+	Label           androidbinary.String `xml:"http://schemas.android.com/apk/res/android label,attr"`
+	Name            androidbinary.String `xml:"http://schemas.android.com/apk/res/android name,attr"`
+	Permission      androidbinary.String `xml:"http://schemas.android.com/apk/res/android permission,attr"`
+	Process         androidbinary.String `xml:"http://schemas.android.com/apk/res/android process,attr"`
+	MetaData        []MetaData           `xml:"meta-data"`
 }
 
 // Application is an application in an APK.
@@ -116,6 +129,7 @@ type Application struct {
 	VMSafeMode            androidbinary.Bool   `xml:"http://schemas.android.com/apk/res/android vmSafeMode,attr"`
 	Activities            []AppActivity        `xml:"activity"`
 	Providers             []Provider           `xml:"provider"`
+	Receivers             []Receiver           `xml:"receiver"`
 	ActivityAliases       []AppActivityAlias   `xml:"activity-alias"`
 	MetaData              []MetaData           `xml:"meta-data"`
 }
